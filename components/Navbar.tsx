@@ -1,36 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'الرئيسية', href: '#hero' },
     { name: 'خدماتنا', href: '#services' },
-    { name: 'أعمالنا', href: '#portfolio' },
     { name: 'الأسعار', href: '#pricing' },
     { name: 'الأسئلة الشائعة', href: '#faq' },
   ];
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-900/95 shadow-lg backdrop-blur-md py-2' : 'bg-transparent py-4'
-      }`}
+      className="fixed w-full z-50 bg-slate-900 shadow-lg py-2 transition-all duration-300"
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="text-2xl font-bold text-white flex items-center gap-2">
-          <span className="text-orange-500">شركة</span> مغرب أونلاين
+          <span className="text-orange-500">مغرب أونلاين</span> بريس
         </a>
 
         {/* Desktop Menu */}

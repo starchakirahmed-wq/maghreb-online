@@ -9,6 +9,7 @@ export interface ServiceItem {
 export interface PackageItem {
   name: string;
   price: string;
+  originalPrice?: string;
   features: string[];
   isPopular?: boolean;
   ctaText: string;
@@ -26,14 +27,14 @@ export interface FAQItem {
   answer: string;
 }
 
-export interface PortfolioItem {
-  title: string;
-  category: string;
-  image: string;
-}
-
 export interface StatItem {
   value: string;
   label: string;
   icon: LucideIcon;
+}
+
+export interface PortfolioItem {
+  title: string;
+  category: string;
+  image: string;
 }

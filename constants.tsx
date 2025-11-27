@@ -1,26 +1,22 @@
 import { 
   Monitor, 
-  Smartphone, 
   Globe, 
-  BarChart, 
   Search, 
   ShieldCheck, 
   PenTool, 
   Share2, 
-  Camera,
   Clock,
-  Edit,
   Headphones,
   Award,
-  Zap
+  Hammer
 } from 'lucide-react';
-import { ServiceItem, PackageItem, TestimonialItem, FAQItem, PortfolioItem, StatItem } from './types';
+import { ServiceItem, PackageItem, TestimonialItem, FAQItem, StatItem, PortfolioItem } from './types';
 
 // Hero Slogans
 export const HERO_SLOGANS = {
   solution: "وجودك الرقمي يبدأ من هنا... نجاحك يبدأ معنا.",
   customer: "لديك فكرة رائعة؟ نحن نبني لها المنزل الرقمي الأمثل.",
-  excellence: "شركة مغرب أونلاين: من فكرة عابرة إلى منصة رقمية مؤثرة."
+  excellence: "من فكرة عابرة إلى منصة رقمية مؤثرة."
 };
 
 // Stats / Why Us Highlights
@@ -41,6 +37,11 @@ export const SERVICES: ServiceItem[] = [
     title: "المتاجر الإلكترونية",
     description: "متاجر متكاملة مع ربط بوابات الدفع، إدارة المخزون، وتقارير المبيعات.",
     icon: Globe
+  },
+  {
+    title: "مواقع الصناع الحرفيين",
+    description: "تصميم معارض رقمية للحرفيين والصناع التقليديين لعرض إبداعاتهم وبيعها عالمياً.",
+    icon: Hammer
   },
   {
     title: "تحسين محركات البحث (SEO)",
@@ -67,22 +68,25 @@ export const SERVICES: ServiceItem[] = [
 export const PACKAGES: PackageItem[] = [
   {
     name: "الباقة الأساسية",
-    price: "$49",
+    price: "500 درهم",
+    originalPrice: "3,000 درهم",
     features: [
       "تصميم صفحة واحدة (Landing Page)",
       "تصميم احترافي متجاوب",
       "تسليم خلال 3 أيام",
       "نموذج اتصال",
-      "ربط وسائل التواصل"
+      "زائد مصاريف شراء الدومين"
     ],
     ctaText: "اطلب الآن",
     isPopular: false
   },
   {
     name: "الباقة الاحترافية",
-    price: "$149",
+    price: "1500 درهم",
+    originalPrice: "15,000 درهم",
     features: [
       "موقع من 3-5 صفحات",
+      "دومين مجاني (.com)",
       "تحسين سرعة فائق",
       "لوحة تحكم سهلة",
       "تسليم خلال 7 أيام",
@@ -94,9 +98,12 @@ export const PACKAGES: PackageItem[] = [
   },
   {
     name: "باقة المتاجر (المتقدمة)",
-    price: "$399",
+    price: "4500 درهم",
+    originalPrice: "30,000 درهم",
     features: [
       "متجر إلكتروني متكامل",
+      "دومين مجاني (.com) لمدة سنة",
+      "استضافة سريعة مجانية",
       "ربط بوابات الدفع",
       "إدارة منتجات ومخزون",
       "SEO متقدم للمتاجر",
@@ -110,24 +117,54 @@ export const PACKAGES: PackageItem[] = [
 
 export const PORTFOLIO: PortfolioItem[] = [
   {
-    title: "متجر الأزياء العصرية",
+    title: "متجر اكسسوارات ومجوهرات",
     category: "متجر إلكتروني",
-    image: "https://picsum.photos/id/445/600/400"
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2070&auto=format&fit=crop"
   },
   {
-    title: "شركة العقارات الذهبية",
-    category: "موقع شركات",
-    image: "https://picsum.photos/id/180/600/400"
+    title: "سوق البيع والشراء المفتوح",
+    category: "منصة تجارة إلكترونية",
+    image: "https://images.unsplash.com/photo-1472851294608-415105015b99?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "ورشة الأمانة للنجارة",
+    category: "موقع خدمات حرفية",
+    image: "https://images.unsplash.com/photo-1622151834677-70f982c9adef?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "جريدة أخبار اليوم",
+    category: "صحيفة إلكترونية",
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "الصباغة والديكورات",
+    category: "خدمات منزلية",
+    image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2031&auto=format&fit=crop"
+  },
+  {
+    title: "خدمة السائق الخاص",
+    category: "خدمات نقل",
+    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop"
   },
   {
     title: "عيادة الشفاء الطبية",
-    category: "موقع خدمات",
-    image: "https://picsum.photos/id/48/600/400"
+    category: "موقع طبي",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop"
   },
-    {
+  {
+    title: "شركة العقارات",
+    category: "موقع عقاري",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
     title: "مدونة التقنية الحديثة",
-    category: "مدونة / محتوى",
-    image: "https://picsum.photos/id/60/600/400"
+    category: "مدونة",
+    image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "الشركات والجمعيات",
+    category: "موقع مؤسسي",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
   }
 ];
 

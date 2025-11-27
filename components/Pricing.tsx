@@ -19,22 +19,36 @@ export const Pricing: React.FC = () => {
           {PACKAGES.map((pkg, index) => (
             <div 
               key={index} 
-              className={`relative bg-white rounded-2xl p-8 border ${
+              className={`relative bg-white rounded-2xl p-8 border overflow-hidden ${
                 pkg.isPopular 
                   ? 'border-orange-500 shadow-2xl scale-105 z-10' 
                   : 'border-slate-200 shadow-sm'
               }`}
             >
+              {/* Discount Badge */}
+              <div className="absolute top-0 left-0 bg-red-600 text-white px-4 py-2 rounded-br-2xl z-20 font-black text-sm shadow-md">
+                تخفيض 100%
+              </div>
+
               {pkg.isPopular && (
-                <div className="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                <div className="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
                   الأكثر طلباً
                 </div>
               )}
               
-              <h3 className="text-xl font-bold text-slate-900 mb-2">{pkg.name}</h3>
-              <div className="flex items-baseline mb-6">
-                <span className="text-4xl font-extrabold text-slate-900">{pkg.price}</span>
-                <span className="text-slate-500 mr-2">/ مشروع</span>
+              <h3 className="text-xl font-bold text-slate-900 mb-2 mt-2">{pkg.name}</h3>
+              
+              <div className="mb-6">
+                 {pkg.originalPrice && (
+                     <div className="text-slate-400 text-lg line-through font-medium mb-1 relative inline-block">
+                         {pkg.originalPrice}
+                         <div className="absolute top-1/2 left-0 w-full h-[2px] bg-red-500 rotate-[-10deg]"></div>
+                     </div>
+                 )}
+                 <div className="flex items-baseline">
+                    <span className="text-4xl font-extrabold text-slate-900">{pkg.price}</span>
+                    <span className="text-slate-500 mr-2 text-sm">/ مشروع</span>
+                 </div>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -61,8 +75,8 @@ export const Pricing: React.FC = () => {
         </div>
         
         <div className="text-center mt-10">
-            <p className="text-orange-600 font-semibold animate-pulse">
-                🔥 اطلب الآن واحصل على استشارة مجانية – العرض محدود لفترة قصيرة!
+            <p className="text-orange-600 font-semibold animate-pulse text-lg">
+                🔥 اطلب الآن واحصل على استشارة مجانية – العرض سينتهي قريباً!
             </p>
         </div>
       </div>
